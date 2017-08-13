@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="icon" href="./assets/ico.png"/>
+<title></title>
+<link rel="stylesheet" type="text/css" href="./base.css">
+<link rel="stylesheet" type="text/css" href="./ring.css">
+<style type="text/css"></style>
+<script type="text/javascript" src="./vue2.js"></script>
+<script type="text/javascript" src="./vue-resource.js"></script>
+</head>
+<body>
+	<div id="ring">
+		<header class="head">
+			<div class="t_h clear-fix">
+				<h1 class="logo fl"><a href="#">腾讯网</a></h1>
+				<span class="toggle fr">
+					<a href="javascript:;" :class="{top:t}" @click="down">{{msg}}</a>
+				</span>
+			</div>
+		</header>
+		<div class="channel" v-show="t">
+          <ul>
+             <li><a href="#">首页</a></li>
+             <li><a href="#">新闻</a></li>
+             <li><a href="#">财经</a></li>
+             <li><a href="#">娱乐</a></li>
+             <li><a href="#">体育</a></li>
+             <li><a href="#">证券</a></li>
+             <li><a href="#">军事</a></li>
+             <li><a href="#">科技</a></li>
+             <li><a href="#">数码</a></li>
+             <li><a href="#">时尚</a></li>
+             <li><a href="#">汽车</a></li>
+             <li><a href="#">游戏</a></li>
+             <li><a href="#">房产</a></li>
+             <li><a href="#">星座</a></li>
+             <li><a href="#">视频</a></li>
+          </ul>
+      </div>
+      <div class="center">
+      		<div class="headers">
+      			<h1></h1>
+      		</div>
+      		<div class="gallery">
+	   			<a href="#">
+	   				<div class="img">
+	   					<img src="assets/60.jpg">
+	   				</div>
+	   				<h2>600岁的故宫正在让自己成为“网红”</h2>
+   			    </a>
+   			</div>
+   			<div class="content">
+   			<ul>
+   				<li class="full" v-for="v in arr">
+	              <a href="#">
+	                <div class="simg"><img :src="v.img"></div>
+	                <h2>{{v.h1}}</h2>
+	                <p>
+	                  {{v.p}}
+	                  <span class="count">
+	                      	{{v.i1}}
+	                  </span>
+	                </p>
+	              </a>
+	          </li>
+   			</ul>
+   			</div>
+      </div>
+      <div class="more">
+        <span class="gomore" @click="more">{{mm}}</span>
+      </div>
+      <div class="footNav">
+	       	 <ul>
+	             <li><a href="#">首页</a></li>
+	             <li><a href="#">新闻</a></li>
+	             <li><a href="#">财经</a></li>
+	             <li><a href="#">娱乐</a></li>
+	             <li><a href="#">体育</a></li>
+	             <li><a href="#">证券</a></li>
+	             <li><a href="#">军事</a></li>
+	             <li><a href="#">科技</a></li>
+	             <li><a href="#">数码</a></li>
+	             <li><a href="#">时尚</a></li>
+	             <li><a href="#">汽车</a></li>
+	             <li><a href="#">游戏</a></li>
+	             <li><a href="#">房产</a></li>
+	             <li><a href="#">星座</a></li>
+	             <li><a href="#">视频</a></li>
+	         </ul>
+      </div>
+      <div class="footer">
+	        <div class="links">
+	          <a href="#">反馈</a>
+	          <a href="#" class="links_a">举报中心</a>
+	        </div>
+	        <p class="copy">Copyright © 1998 - 2017 Tencent. 腾讯科技（北京）有限公司 All Rights Reserved</p>
+	        <div class="gotop" @click="gotop"></div>
+      </div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	new Vue({
+		el:'#ring',
+		data:{
+			t:false,
+			msg:'导航',
+			mm:'点击查看更多',
+			arr:[
+				{
+		            img:'assets/74.jpg',
+		            h1:'养成系偶像女团SNH48的本土蔓延之路',
+		            p:'养成系偶像SNH48本土蔓延之路',
+		            i1:'第228期'
+		        },
+		         {
+		            img:'assets/61.jpg',
+		            h1:'“限韩令”追踪：韩娱圈或将有1/3的人失业',
+		            p:'“限韩令”热传十余天，尽管目前为止...',
+		            i1:'第227期'
+		        },
+		         {
+		            img:'assets/62.jpg',
+		            h1:'国产电视剧特效现状调查',
+		            p:'“国剧特效终于不再五毛，好莱坞团队已...',
+		            i1:'第226期'
+		        },
+		         {
+		            img:'assets/63.jpg',
+		            h1:'看了多场明星婚礼，背后故事揭秘',
+		            p:' 明星婚礼',
+		            i1:'第225期'
+		        },
+		         {
+		            img:'assets/64.jpg',
+		            h1:'民间字幕组2.0时代生存调查',
+		            p:' 字幕组',
+		            i1:'第224期'
+		        },
+		        {
+		            img:'assets/65.jpg',
+		            h1:'《叶问3》引千亿集团快鹿震荡',
+		            p:'以前我总是想尽一切办法挣钱，而现在...',
+		            i1:'第223期'
+		        },
+		         {
+		            img:'assets/66.jpg',
+		            h1:'实力揭穿精彩过宫斗剧的明星咖位战',
+		            p:'“ 娱乐圈没大家想的那么好，也没那么糟。',
+		            i1:'第222期'
+		        },
+		         {
+		            img:'assets/67.jpg',
+		            h1:'揭秘明星保镖的真实生活',
+		            p:'“本期《贵圈》，我们来聊聊明星保镖们的故事',
+		            i1:'第219期'
+		        },
+		         {
+		            img:'assets/68.jpg',
+		            h1:'你们欧巴宋仲基来华捞金幕后调查：安检严格到连内衣都不放过',
+		            p:' 你们欧巴宋仲基来华捞金幕后调查：安...',
+		            i1:'第228期'
+		        },
+		         {
+		            img:'assets/69.jpg',
+		            h1:'放下偏见来了解粉丝应援文化：有钱任性不等于脑残，追星也有中介服务',
+		            p:' 粉丝应援',
+		            i1:'第217期'
+		        },
+		         {
+		            img:'assets/70.jpg',
+		            h1:'揭papi酱背后生意经：曾被估值三亿，团队已在挖掘更多papi',
+		            p:'这场被全民围观的喧嚣背后，是网红经...',
+		            i1:'第216期'
+		        },
+		         {
+		            img:'assets/71.jpg',
+		            h1:'明星、网红、90后都中了手机直播的毒，这背后的套路我们全掌握',
+		            p:'“ 去年开始，视频直播软件开始悄悄走红...',
+		            i1:'第215期'
+		        },
+		         {
+		            img:'assets/72.jpg',
+		            h1:'撕开韩国天团巡演天价门票的口子',
+		            p:'事实证明，BIGBANG的粉丝们想...',
+		            i1:'第213期'
+		        },
+		         {
+		            img:'assets/73.jpg',
+		            h1:'探访90后都在玩的B站：员工直播吃炸鸡，妹子穿汉服上班',
+		            p:' 实地探访90后都在玩的B站：员工直...',
+		            i1:'第212期'
+		        }
+			]
+		},
+		methods:{
+			gotop:function(){
+		      document.body.scrollTop = 0;
+		      document.documentElement.scrollTop = 0;
+		    },
+			down:function(){
+				this.t=!this.t;
+				if(this.t){
+					this.msg='收起';
+				}else{
+					this.msg='导航';
+				}
+			},
+			more:function(){
+			      this.mm='加载中...';
+			      this.$http({
+			        url:'./ring.txt',
+			        method:'GET',
+			      }).then(function(res){
+			        let json = eval('('+res.bodyText+')');
+			        let ring = json.ring;
+			        for(var i=0;i<ring.length;i++){
+			          this.arr.push(ring[i]);
+			        }
+			        this.mm='点击查看更多';
+			      },function(){})
+   			 }
+		}
+	})
+</script>

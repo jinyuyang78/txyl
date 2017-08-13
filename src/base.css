@@ -1,0 +1,32 @@
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dd,dl,input,img,div{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border: none;
+}
+/*设置默认的文字大小和类型*/
+body {
+  box-sizing: border-box;
+	font-family:Helvetica,STHeiti,Droid Sans Fallback;
+	border:none;
+	font-size: 14px;
+}
+a {
+	text-decoration: none;
+	color: black;
+	outline: none;
+}
+a:hover {
+	text-decoration: none;
+}
+i,em {
+	font-style: normal;
+}
+select,input,img {
+	vertical-align: middle;
+	outline: none;
+}
+.clear-fix:after { content: ""; display: block; clear: both; }
+.clear-fix { zoom: 1;}
+.fl { float: left; }
+.fr { float: right; }
